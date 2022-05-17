@@ -1,23 +1,26 @@
 {
+  "dependencies": {
+    "jimp": "^0.16.1",
+    "yargs": "^17.5.1"
+  },
   "name": "youtube-thumbnai-maker",
   "version": "0.0.1",
-  "description": "This project help youtubers to style their video thubnails using nodejs",
-  "main": "app.js",
+  "main": "index.js",
+  "devDependencies": {},
   "scripts": {
-    "start" : "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node program.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anonymoustafa/youtube-thubnail-maker-js.git"
   },
-  "author": "Mostafa Ramezani",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/anonymoustafa/youtube-thubnail-maker-js/issues"
   },
   "homepage": "https://github.com/anonymoustafa/youtube-thubnail-maker-js#readme",
-  "dependencies": {
-    "jimp": "^0.16.1"
-  }
+  "description": ""
 }
