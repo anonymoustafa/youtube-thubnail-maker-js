@@ -1,27 +1,15 @@
-const Jimp = require("jimp");
-const yargs = require("yargs/yargs");
-const { hideBin } = require("yargs/helpers");
+import chalk from 'chalk';
+import Jimp from "jimp";
+import yargs from "yargs/yargs";
+import { hideBin } from "yargs/helpers";
 const argv = yargs(hideBin(process.argv)).argv;
+const error = chalk.bold.red;
+const warning = chalk.hex('#FFA500'); // Orange color
+if(!argv.dimension) throw error("Dimensions is not specified!. Run $/usr/bin/env node program.js --dimension=YouTube or arbitrary values like: --dimension=1270*768 to change the selected file.");
 
+if(!argv.format) warning("Format is not specified!. Run $/usr/bin/env node program.js --format=jpg or png, tiff, bmp, git. If not specifies, png would automatically be assigned.");
 
-require("yargs")
-        .scriptName("YouTube-Thumbnail-Formatter")
-        .usage("$0 <cmd> [args]")
-        .command(
-                "format [fileName]",
-                "welcome ter yargs!",
-                (yargs) => {
-                        yargs.positional("fileName", {
-                                type: "string",
-                                default: `${Date()}.png`,
-                                describe: "Saves the picture",
-                        });
-                },
-                function (argv) {
-                        console.log("The", argv.fileName, "has been saved!");
-                }
-        )
-        .help().argv;
+const widthAndHeight = argv.dimension.split('*');
 
 
 if (argv.format == "jpg") {
