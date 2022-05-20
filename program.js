@@ -15,8 +15,8 @@ if (argv.dimension.toLocaleLowerCase() == "youtube") {
                 height = 720;
 } else {
         const widthAndHeight = argv.dimension.split("*");
-        var width = widthAndHeight[0],
-                height = widthAndHeight[1];
+        var width = Number(widthAndHeight[0]),
+                height = Number(widthAndHeight[1]);
 }
 
 if (!argv.format)
